@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--
+    <script src="../scripts/script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Helvetica+Neue" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" type="text/css">-->
+    <link rel="stylesheet" type="text/css" href="../static/base.css">
+</head>
+
+
+<body>
+
+
+<div class = "container-fluid">
+
+  <div class="row">
+
+    <div class="col-sm-12 text-center" id="home-row-1">
+
+        <h2>Form</h2>
+
+        <form action="{{ url_for('download',filename='Template.aet') }}" method="post">
+
+          <input type="text" name="replace_text">
+
+          <input type="submit">
+
+        </form>
+
+        <div class="text-container">
+
+          <p> I currently live in Austin, Texas. Starting in the fall, I will be a freshman at the University of Austin, Texas, studying computer science. I first started writing code
+            at the beginning of high school, and it's grown to become a daily routine and one of my favorite activities. Whenever I feel stressed or overworked, I try to sit down and work on one
+            of the many pet projects I'm working on. When I'm not writing code or doing school work I like to bike, play chess competitively, and grind video games with my friends.</p>
+
+        </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+</body>
+
+
+</html>

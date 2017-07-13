@@ -1,0 +1,15 @@
+#home-row-1{
+
+  background-color: #eee;
+  width: 100%;
+  padding-top:70px;
+  padding-bottom:50px;
+  color:black;
+}
+
+
+.text-container{
+  width:70%;
+  margin:auto;
+  font-size: 20px;
+}
