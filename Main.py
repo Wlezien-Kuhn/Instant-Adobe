@@ -4,7 +4,7 @@ import os
 
 app = Flask(__name__)
 
-app.config["UPLOAD_FOLDER"]="static/media/"
+app.config["UPLOAD_FOLDER"]="static/adobe/"
 app.config["TEMPLATES_AUTO_RELOAD"]=True
 
 app.root_path="C:/Users/alex-wlezien/Desktop/Github Projects/Instant Adobe/"
@@ -12,10 +12,10 @@ app.root_path="C:/Users/alex-wlezien/Desktop/Github Projects/Instant Adobe/"
 def home():
     return render_template("home.html")
 
-@app.route("/form/")
-def form():
+@app.route("/form/<path:file>")
+def form(file):
 
-    return "form page"
+    return render_template("form.html",file=file)
 
 @app.route("/about")
 def about():
@@ -29,8 +29,9 @@ def download(filename):
 
         app.logger.error("this is the post method of download")
 
-        replace_text = request.form["replace_text"]
+        #replace_text = request.form["replace_text"]
         uploads = os.path.join(app.root_path, app.config['UPLOAD_FOLDER'])
 
         app.logger.error("the uploads directory is: " + uploads)
-        return send_from_directory(directory=uploads, filename=filename)
+        app.logger.error("filename: " + filename)
+        return send_from_directory(directory=uploads, filename=filename+".aep")

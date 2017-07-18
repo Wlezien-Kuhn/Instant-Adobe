@@ -26,41 +26,11 @@
 
         <video width="300" height="300" controls>
 
-          <source src="{{ url_for('static', filename='media/random.mp4') }}"  type="video/mp4">
+          <source src="{{ url_for('static', filename='media/example.mp4') }}"  type="video/mp4">
 
         </video>
 
 
-        <h2>Form</h2>
-
-
-        <form action="{{ url_for('download',filename='random.mp4') }}" method="post">
-
-          <label for="#">input 1</label>
-          <input type="text" name="replace_text1">
-          <br>
-
-          <label for="#">input 2</label>
-          <input type="text" name="replace_text2">
-          <br>
-
-          <label for="#">input 3</label>
-          <input type="text" name="replace_text3">
-          <br>
-
-          <label for="#">input 4</label>
-          <input type="text" name="replace_text4">
-          <br>
-
-          <input type="submit">
-
-        </form>
-
-        <div class="text-container">
-
-          <p> </p>
-
-        </div>
 
     </div>
 
