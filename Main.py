@@ -3,7 +3,7 @@ import subprocess
 import os
 
 app = Flask(__name__)
-app.config["UPLOAD_FOLDER"]="etdownloads/"
+app.config["UPLOAD_FOLDER"]="downloads/"
 app.root_path="C:/Users/alex-wlezien/Desktop/Github Projects/Instant Adobe/"
 @app.route("/")
 def home():
