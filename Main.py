@@ -3,7 +3,10 @@ import subprocess
 import os
 
 app = Flask(__name__)
-app.config["UPLOAD_FOLDER"]="downloads/"
+
+app.config["UPLOAD_FOLDER"]="static/media/"
+app.config["TEMPLATES_AUTO_RELOAD"]=True
+
 app.root_path="C:/Users/alex-wlezien/Desktop/Github Projects/Instant Adobe/"
 @app.route("/")
 def home():
