@@ -6,12 +6,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{{url_for('static',filename='scripts/home.js')}}"></script>
     <!--
     <script src="../scripts/script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="http://fonts.googleapis.com/css?family=Helvetica+Neue" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" type="text/css">-->
-    <link rel="stylesheet" type="text/css" href="../static/base.css">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='home.css')}}">
 </head>
 
 
@@ -24,11 +26,15 @@
 
     <div class="col-sm-12 text-center" id="home-row-1">
 
-        <video width="300" height="300" controls>
+      <a href="{{url_for('form',file='example')}}">
 
-          <source src="{{ url_for('static', filename='media/example.mp4') }}"  type="video/mp4">
+        <video poster="{{url_for('static',filename='posters/example.png')}}" class="home-video" muted>
+
+          <source src="{{ url_for('static', filename='videos/example.mp4') }}"  type="video/mp4">
 
         </video>
+
+      </a>
 
 
 

@@ -7,7 +7,8 @@ app = Flask(__name__)
 app.config["UPLOAD_FOLDER"]="static/adobe/"
 app.config["TEMPLATES_AUTO_RELOAD"]=True
 
-app.root_path="C:/Users/alex-wlezien/Desktop/Github Projects/Instant Adobe/"
+app.root_path="C:/Users/alex-wlezien/Desktop/Github Projects/Instant Adobe"
+
 @app.route("/")
 def home():
     return render_template("home.html")
@@ -34,4 +35,5 @@ def download(filename):
 
         app.logger.error("the uploads directory is: " + uploads)
         app.logger.error("filename: " + filename)
+
         return send_from_directory(directory=uploads, filename=filename+".aep")

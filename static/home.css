@@ -13,3 +13,36 @@
   margin:auto;
   font-size: 20px;
 }
+
+.home-video{
+
+  height:50%;
+  width:50%;
+}
+
+.home-video:hover{
+
+  cursor: pointer;
+
+}
+
+.home-video::-webkit-media-controls{
+  display: none;
+}
+
+
+.form-video{
+
+  height:50%;
+  width:50%;
+}
+
+.form-video:hover{
+
+    cursor: pointer;
+
+  }
+
+.form-video::-webkit-media-controls{
+    display: none;
+  }
