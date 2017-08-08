@@ -268,7 +268,7 @@
 $(document).ready(function() {
 	// grab a search stream
 	$.getJSON('http://search.twitter.com/search.json?q=malsup&callback=?', function(json) {
-		// iterate results 
+		// iterate results
 		$.each(json.results, function() {
 			// buid slide and add to slideshow
 			$('<div class="slide">')
@@ -276,7 +276,7 @@ $(document).ready(function() {
 				.append('<span class="tweeter">' + this.from_user + '</span>')
 				.append('<span class="tweet">' + this.text + '</span>')
 				.appendTo('#slideshow');
-		}); 
+		});
 		// after all slides are added, start cycle
 		$('#slideshow').cycle({
 			fx: 'scrollUp',
@@ -293,7 +293,7 @@ jQuery(function($){
           page: 1,
           avatar_size: 32,
           count: 20,
-          loading_text: "loading ..."
+          loading_text: "" // Loading Text
         }).bind("loaded", function() {
           var ul = $(this).find(".tweet_list");
           var ticker = function() {
