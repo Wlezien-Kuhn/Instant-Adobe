@@ -6,6 +6,6 @@ create table templates(
 	Poster varchar(50),
 	Aep varchar(50) not null,
 	Mov varchar(50) not null,
-	UUID char(16) not null unique
+	UUID char(36) not null unique
 
 );

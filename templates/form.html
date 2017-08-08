@@ -28,7 +28,7 @@
 
         <video class="form-video" muted>
 
-          <source src="{{ url_for('static', filename='videos/'+file+'.mp4') }}"  type="video/mp4">
+          <source src="{{ url_for('static', filename='videos/'+template.3+'.mp4') }}"  type="video/mp4">
 
         </video>
 
@@ -36,7 +36,7 @@
         <h2>Form</h2>
 
 
-        <form action="{{ url_for('download',filename=file) }}" method="post">
+        <form action="{{ url_for('download',filename=template.3) }}" method="post">
 
           <label for="#">input 1</label>
           <input type="text" name="replace_text1">

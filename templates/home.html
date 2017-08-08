@@ -26,6 +26,24 @@
 
     <div class="col-sm-12 text-center" id="home-row-1">
 
+      <h1>HOME PAGE</h1>
+
+      {% for row in data %}
+
+      <a href="{{url_for('form',unique_id=row.4)}}">
+
+        <video poster="{{url_for('static',filename='posters/'+row.1+'.png')}}" class="home-video" muted>
+
+          <source src="{{ url_for('static', filename='videos/'+row.3+'.mp4') }}"  type="video/mp4">
+
+        </video>
+
+      </a>
+
+
+      {% endfor %}
+
+      {#
       <a href="{{url_for('form',file='example')}}">
 
         <video poster="{{url_for('static',filename='posters/example.png')}}" class="home-video" muted>
@@ -35,7 +53,7 @@
         </video>
 
       </a>
-
+      #}
 
 
     </div>
