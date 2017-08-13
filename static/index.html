@@ -156,6 +156,7 @@
 <div class="grid">
 	<!-- SHOWCASE
 	================================================== -->
+
 	<div class="row space-top">
 		<div class="c12 space-top">
 			<h1 class="maintitle ">
@@ -177,7 +178,24 @@
 					<li>
 					<div class="featured-projects">
 						<div class="featured-projects-image">
-							<a href="#"><img src="http://placehold.it/275x180" class="imgOpa" alt=""></a>
+							<a href="#">
+								<video id="myVideo" style="max-width: 100%;box-sizing: content-box;">
+
+												<source src="videos/example.mp4" type="video/mp4">
+
+												</source>
+
+								</video>
+
+								<script>
+
+								jQuery('#myVideo').bind("canplay", function() {
+									console.log("playing video");
+    							this.play(); // Should start video
+							});
+
+								</script>
+							</a>
 						</div>
 						<div class="featured-projects-content">
 							<h1><a href="#">Dolor sit amet</a></h1>
@@ -419,7 +437,7 @@ $(window).load(function(){
 				scroll : 2000,
 				items: {
 					visible: {
-						min: 4,
+						min: 2,
 						max: 4
 					}
 				}
@@ -438,5 +456,6 @@ $(document).ready(function(){
     });
   });
 </script>
+
 </body>
 </html>
