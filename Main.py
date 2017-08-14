@@ -1,12 +1,14 @@
-from flask import Flask,request,url_for,render_template,send_from_directory
+from flask import Flask,request,url_for,render_template,send_from_directory,redirect
 import MySQLdb
 import subprocess
 import os
 from . import db as dbhelper
+from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 
-app.config["UPLOAD_FOLDER"]="static/adobe/"
+app.config["UPLOAD_FOLDER"]="uploads/"
+app.config["DOWNLOAD_FOLDER"]="static/adobe/"
 app.config["TEMPLATES_AUTO_RELOAD"]=True
 app.config['MYSQL_USER'] = 'adobe_test'
 app.config['MYSQL_PASSWORD'] = 'instant_adobe'
@@ -46,6 +48,36 @@ def form(unique_id):
 
     return render_template("form.html",template=template)
 
+@app.route("/upload", methods=['GET', 'POST'])
+def upload():
+
+    if request.method=="GET":
+
+        return render_template("upload.html")
+
+    elif request.method=="POST":
+
+        app.logger.error("running post method in upload")
+
+        if "uploaded_file" not in request.files:
+
+            flash('No file part')
+            return redirect(request.url)
+
+        file = request.files["uploaded_file"]
+
+        if file=="":
+
+            flash('No selected file')
+            return redirect(request.url)
+
+        if file:
+            app.logger.error("saving file")
+            file_name = secure_filename(file.filename)
+            file.save(os.path.join(app.config["UPLOAD_FOLDER"],file_name))
+            return redirect(url_for("upload"))
+
+
 @app.route("/about")
 def about():
 
@@ -64,7 +96,7 @@ def download(filename):
 
 
         #replace_text = request.form["replace_text"]
-        uploads = os.path.join(app.root_path, app.config['UPLOAD_FOLDER'])
+        uploads = os.path.join(app.root_path, app.config['DOWNLOAD_FOLDER'])
 
         app.logger.error("the uploads directory is: " + uploads)
         app.logger.error("filename: " + filename)

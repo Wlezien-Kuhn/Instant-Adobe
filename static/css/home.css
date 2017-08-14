@@ -16,8 +16,9 @@
 
 .home-video{
 
-  height:50%;
-  width:50%;
+  height: auto;
+  width:300px;
+  display: inline-block;
 }
 
 .home-video:hover{
